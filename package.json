@@ -1,0 +1,35 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "test1": "node ./node_modules/mocha/bin/mocha",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest":"npm run test -- --record --key 159aa36a-7208-499f-b693-81d0345e4267 --reporter mochawesome",
+    "ALLTest": "npm run test -- --reporter mochawesome --spec 'cypress\\integration\\examples\\TC01_GiftCardValidation.js,cypress\\integration\\examples\\TC02_CategorySmartTVResultVerification.js,cypress\\integration\\examples\\TC03ChangeCurrencyVerification.js' --headed"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "author": "Shilpi Agrawal",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "cypress": "^6.8.0",
+    "cypress-cucumber-preprocessor": "^4.0.3",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2"
+  },
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  }
+}

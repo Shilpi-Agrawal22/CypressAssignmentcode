@@ -1,0 +1,222 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "End to end Ecommerce validation",
+    "line": 1,
+    "id": "end-to-end-ecommerce-validation",
+    "tags": [],
+    "uri": "Amazon.feature",
+    "elements": [
+      {
+        "id": "end-to-end-ecommerce-validation;check-your-gift-card's-balance-is-$0.00",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Check your gift card's balance is $0.00",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Starts on the Amazon",
+            "result": {
+              "status": "passed",
+              "duration": 14162000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 4,
+            "name": "Login with valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 11388000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Click on Your account",
+            "result": {
+              "status": "passed",
+              "duration": 3670000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "Click on Gift Cards",
+            "result": {
+              "status": "passed",
+              "duration": 2187000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Check the balance of your gift card is $0.00",
+            "result": {
+              "status": "passed",
+              "duration": 66000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "end-to-end-ecommerce-validation;check-the-total-displayed-number-of-results-for-category-smart-home-|-televisions",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Check the total displayed number of results for category Smart Home | Televisions",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "Starts on the Amazon",
+            "result": {
+              "status": "passed",
+              "duration": 1973000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "Login with valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 6293000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Go to Categories list",
+            "result": {
+              "status": "passed",
+              "duration": 8490000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Choose category Smart Home",
+            "result": {
+              "status": "passed",
+              "duration": 10330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Choose sub-category category Home Entertainment",
+            "result": {
+              "status": "passed",
+              "duration": 15309000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Choose sub-category Televisions",
+            "result": {
+              "status": "passed",
+              "duration": 13810000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Check the total number of results match the total displayed products",
+            "result": {
+              "status": "passed",
+              "duration": 109429000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "end-to-end-ecommerce-validation;check-the-selected-currency-displayed-for-the-products'-price",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Check the selected currency displayed for the products' price",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "Starts on the Amazon",
+            "result": {
+              "status": "passed",
+              "duration": 3372000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Login with valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 5956000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "Go to Currency Settings",
+            "result": {
+              "status": "passed",
+              "duration": 3456000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Change currency from USD to AED",
+            "result": {
+              "status": "passed",
+              "duration": 650000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "Save changes",
+            "result": {
+              "status": "passed",
+              "duration": 1621000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "Check the selected currency displayed for the products on Amazon Home Page",
+            "result": {
+              "status": "passed",
+              "duration": 91000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
