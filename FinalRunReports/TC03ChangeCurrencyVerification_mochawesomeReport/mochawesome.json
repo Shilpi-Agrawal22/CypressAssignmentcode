@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-26T21:10:52.005Z",
+    "end": "2021-03-26T21:11:31.699Z",
+    "duration": 39694,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6035c133-0fbb-47e6-bfd5-79c206bb5d97",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\TC03ChangeCurrencyVerification.js",
+      "file": "cypress\\integration\\examples\\TC03ChangeCurrencyVerification.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce107402-b0b3-4884-a307-d63ae4b62aa9",
+          "title": "Change Currency Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC03ChangeCurrencyVerification",
+              "fullTitle": "Change Currency Verification TC03ChangeCurrencyVerification",
+              "timedOut": null,
+              "duration": 36606,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Varaiable Initialization\nvar signInPage = new _SignInPage[\"default\"]();\nvar amazonHomePage = new _AmazonHomePage[\"default\"]();\nvar languageCurrencySettingPage = new _LanguageCurrencySettingPage[\"default\"](); //Signin\ncy.visit(Cypress.env('url'));\namazonHomePage.getSignInBtn().click();\nsignInPage.getEmailInput().type(this.data.email);\nsignInPage.getContinueSigninBtn().click();\nsignInPage.getPasswordInput().type(this.data.password);\nsignInPage.getsignInSubmitBtn().click(); //Click on Currency setting buttonthis.data.email\namazonHomePage.getDefaultHomePage().click();\namazonHomePage.getCurrencyDropDown().click(); //Click on Change Currency button\nlanguageCurrencySettingPage.getChangeCurrentBtn().click(); //languageCurrencySettingPage.getCurrentSelect().find('#icp-sc-dropdown_3').click()\nlanguageCurrencySettingPage.getCurrentSelect().contains(\"AED - Arab Emirates Dirham\").click(); //Verification after change should be visible in same field also on Change currency setting page\nlanguageCurrencySettingPage.getChangeCurrentBtn().should('have.text', 'AED - Arab Emirates Dirham');\nlanguageCurrencySettingPage.getSaveCurrencyChangeBtn().click(); //Verification after change should be visible in same field on Amazon Home Page\namazonHomePage.getCurrencySymbol().then(function (element) {\n  var currencySymbol = element.text();\n  cy.log(currencySymbol);\n  amazonHomePage.getCurrencyName().then(function (element2) {\n    var currencyName = element2.text();\n    cy.log(currencyName);\n    currencyName = currencySymbol + ' - ' + currencyName;\n    cy.log(currencyName);\n    expect(currencyName).to.equals('AED - Arab Emirates Dirham');\n  });\n}); //SignOut from Application\namazonHomePage.getAccountAndListEle().should('be.visible');\namazonHomePage.getAccountAndListEle().trigger('mouseover'); //Click on Signout link\namazonHomePage.getSignOut().click();",
+              "err": {},
+              "uuid": "042dbc4c-9563-4258-8a9b-12c153eb9497",
+              "parentUUID": "ce107402-b0b3-4884-a307-d63ae4b62aa9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "042dbc4c-9563-4258-8a9b-12c153eb9497"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36606,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

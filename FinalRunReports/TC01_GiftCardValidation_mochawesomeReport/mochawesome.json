@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-26T21:22:55.193Z",
+    "end": "2021-03-26T21:23:20.150Z",
+    "duration": 24957,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b4cc84eb-484f-4079-8311-913365c40815",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\TC01_GiftCardValidation.js",
+      "file": "cypress\\integration\\examples\\TC01_GiftCardValidation.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "059074b0-a772-4c00-8beb-92bb5c181200",
+          "title": "Verification of Gift Card default Balance",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01_GiftCardValidation",
+              "fullTitle": "Verification of Gift Card default Balance TC01_GiftCardValidation",
+              "timedOut": null,
+              "duration": 19747,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Variable initialization\nvar signInPage = new _SignInPage[\"default\"]();\nvar userAccountPage = new _UserAccountPage[\"default\"]();\nvar amazonHomePage = new _AmazonHomePage[\"default\"]();\nvar giftCardBalancePage = new _GiftCardBalancePage[\"default\"](); //Navigate to Amazon Application\ncy.visit(Cypress.env('url'));\namazonHomePage.getSignInBtn().click();\nsignInPage.getEmailInput().type(this.data.email);\nsignInPage.getContinueSigninBtn().click();\nsignInPage.getPasswordInput().type(this.data.password);\nsignInPage.getsignInSubmitBtn().click(); //CLick to User's Account & List \namazonHomePage.getAccountAndListEle().should('be.visible');\namazonHomePage.getAccountAndListEle().trigger('mouseover'); //Click on Account link\namazonHomePage.getAccountLink().click(); //Click on Gift Card\nuserAccountPage.getGiftCardsEleBox().click(); //Verify Gift Card Message Text   \ngiftCardBalancePage.getGiftCardBalEle().should('contain', 'Your Gift Card Balance'); //Using custom command function\n//cy.textVerificationOnElement( cy.get('.a-row.gc-balance-box h2'),'Your Gift Card Balance')\n//Using custom command function\n//Verify Gift Card Balance\ngiftCardBalancePage.getGiftCardBalValueEle().then(function (element) {\n  var giftcardBalance = element.text().trim();\n  cy.log(giftcardBalance);\n  expect(giftcardBalance.includes('USD 0.00')).to.be[\"true\"];\n}); //SignOut from Application\namazonHomePage.getAccountAndListEle().should('be.visible');\namazonHomePage.getAccountAndListEle().trigger('mouseover'); //Click on Signout link\namazonHomePage.getSignOut().click();",
+              "err": {},
+              "uuid": "d31d7ef4-1c06-4df0-a587-2a047d7421f1",
+              "parentUUID": "059074b0-a772-4c00-8beb-92bb5c181200",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d31d7ef4-1c06-4df0-a587-2a047d7421f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19747,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

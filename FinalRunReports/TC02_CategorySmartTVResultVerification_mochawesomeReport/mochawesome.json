@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-26T21:00:20.395Z",
+    "end": "2021-03-26T21:03:25.364Z",
+    "duration": 184969,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "df8b71a0-9b01-47ad-b2d1-289b2d257c98",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\TC02_CategorySmartTVResultVerification.js",
+      "file": "cypress\\integration\\examples\\TC02_CategorySmartTVResultVerification.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "95a294ef-fa4f-4cae-9cb5-843f2e7353b5",
+          "title": "Verification of Smart TV Category Results",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC02_CategorySmartTVResultVerification",
+              "fullTitle": "Verification of Smart TV Category Results TC02_CategorySmartTVResultVerification",
+              "timedOut": null,
+              "duration": 179874,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Variable Initialization\nvar signInPage = new _SignInPage[\"default\"]();\nvar amazonHomePage = new _AmazonHomePage[\"default\"]();\nvar smartHomeEntertainmentPage = new _SmartHomeEntertainmentPage[\"default\"](); //Login to Application\ncy.visit(Cypress.env('url'));\namazonHomePage.getSignInBtn().click();\nsignInPage.getEmailInput().type(this.data.email);\nsignInPage.getContinueSigninBtn().click();\nsignInPage.getPasswordInput().type(this.data.password);\nsignInPage.getsignInSubmitBtn().click(); //Clicking on ALL Catrgories\namazonHomePage.getAllCategoryListEle().click();\ncy.wait(8000); //Clicking on Smart Home Menu\namazonHomePage.getCategorySmartHomeEle().click();\ncy.wait(10000); //Clicking on Home Entertainment SubMenu\namazonHomePage.getSubCategoryHomeEntertainmentEle().click();\ncy.wait(10000); //Clicking on Television subcategory\nsmartHomeEntertainmentPage.getSmartTelevisionCategoryEle().click();\ncy.wait(10000); //Clicking on See All Results\nsmartHomeEntertainmentPage.getSeeAllResultLinkEle().click();\nsmartHomeEntertainmentPage.getResultMesEle().then(function (element) {\n  var NumberOfTelevisionElement = element.text();\n  cy.log(NumberOfTelevisionElement);\n  var res = NumberOfTelevisionElement.split(\"of\");\n  var NoOfTelevisions = res[1].trim();\n  var NoOfTelevisions2 = NoOfTelevisions.split(\"results\");\n  NoOfTelevisions = NoOfTelevisions2[0].trim();\n  cy.log(NoOfTelevisions);\n  smartHomeEntertainmentPage.getTelevisionResultsContainerEle().then(function ($elements) {\n    var countOfElementsOnEachPage = $elements.length;\n    cy.log('No of Elements on Each Page' + countOfElementsOnEachPage);\n    cy.get('ul.a-pagination').find('>li').then(function ($element2) {\n      var countOfPage = $element2.length;\n      countOfPage = Number(countOfPage) - 1;\n      cy.log(\"Count of page\" + countOfPage);\n      smartHomeEntertainmentPage.getPaginationBtns().each(function ($el, index, $list) {\n        cy.log(\"No Of Pages\" + countOfPage); //Clicking on All page navigation number buttons to reach last page\n        if (index < countOfPage - 1) {\n          if ($el.attr('class') == 'a-disabled') {\n            $el.attr('class', 'a-selected');\n            smartHomeEntertainmentPage.getPaginationNextBtn().click({\n              force: true\n            });\n            cy.wait(20000);\n          } else if ($el.attr('class') == 'a-normal') {\n            $el.attr('class', 'a-selected');\n            smartHomeEntertainmentPage.getPaginationNextBtn().click({\n              force: true\n            });\n            cy.wait(20000);\n          } else {\n            cy.log(\"Element class\" + $el.attr('class'));\n            smartHomeEntertainmentPage.getPaginationNextBtn().click({\n              force: true\n            });\n            cy.wait(20000);\n          }\n        }\n      }).then(function ($countOfPage) {\n        smartHomeEntertainmentPage.getTelevisionResultsContainerEle().then(function ($elements3) {\n          var countOfElementsOnLastPage = $elements3.length;\n          cy.log('No of Elements on Last Page' + countOfElementsOnLastPage); //Logic to compute total number of result[TotalCount=NoOfTeleveionsOnLastPage + NoOfrecordsOnEachPage*(TotalNoOfPages-1)]\n          var TotalNumberofRecords = (Number(countOfPage) - 1) * Number(countOfElementsOnEachPage) + Number(countOfElementsOnLastPage);\n          cy.log(TotalNumberofRecords);\n          expect(TotalNumberofRecords).to.equal(Number(NoOfTelevisions));\n        });\n      });\n    });\n  });\n}); //SignOut from Application\namazonHomePage.getAccountAndListEle().should('be.visible');\namazonHomePage.getAccountAndListEle().trigger('mouseover'); //Click on Signout link\namazonHomePage.getSignOut().click();",
+              "err": {},
+              "uuid": "cac9bc0c-4d52-4bc8-9e82-2cc371a1c049",
+              "parentUUID": "95a294ef-fa4f-4cae-9cb5-843f2e7353b5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cac9bc0c-4d52-4bc8-9e82-2cc371a1c049"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 179874,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

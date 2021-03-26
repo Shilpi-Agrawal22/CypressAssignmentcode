@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-26T23:00:46.746Z",
+    "end": "2021-03-26T23:04:10.389Z",
+    "duration": 203643,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8110ef16-d10d-46a6-944f-ac615cb39006",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\BDD\\Amazon.feature",
+      "file": "cypress\\integration\\examples\\BDD\\Amazon.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83ea9903-6d4a-4823-b1f5-d6a6216f2dd8",
+          "title": "End to end Ecommerce validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check your gift card's balance is $0.00",
+              "fullTitle": "End to end Ecommerce validation Check your gift card's balance is $0.00",
+              "timedOut": null,
+              "duration": 21275,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() =>\n    resolveAndRunAfterHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "6894b8ff-fae6-4557-b24f-4b1de4a1082d",
+              "parentUUID": "83ea9903-6d4a-4823-b1f5-d6a6216f2dd8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check the total displayed number of results for category Smart Home | Televisions",
+              "fullTitle": "End to end Ecommerce validation Check the total displayed number of results for category Smart Home | Televisions",
+              "timedOut": null,
+              "duration": 162412,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() =>\n    resolveAndRunAfterHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "1593e704-acc6-4201-8eeb-df157217b19f",
+              "parentUUID": "83ea9903-6d4a-4823-b1f5-d6a6216f2dd8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check the selected currency displayed for the products' price",
+              "fullTitle": "End to end Ecommerce validation Check the selected currency displayed for the products' price",
+              "timedOut": null,
+              "duration": 15544,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() =>\n    resolveAndRunAfterHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "ba1bb04d-b9c3-40e8-b569-64d4878190fe",
+              "parentUUID": "83ea9903-6d4a-4823-b1f5-d6a6216f2dd8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6894b8ff-fae6-4557-b24f-4b1de4a1082d",
+            "1593e704-acc6-4201-8eeb-df157217b19f",
+            "ba1bb04d-b9c3-40e8-b569-64d4878190fe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 199231,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
